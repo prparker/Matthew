@@ -28,7 +28,7 @@ class lightP {
     }
     //method to draw individual particle
     draw() {
-        /*ctx.beginPath();
+        ctx.beginPath();
         ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2, false);
         ctx.fill();
         ctx.arc(this.x, this.y, radius, 0, Math.PI * 2, false);
@@ -38,7 +38,7 @@ class lightP {
         ctx.fill();
         ctx.arc(this.x, this.y, load_radius, 0, Math.PI * 2, false);
         ctx.fill();
-        ctx.fillStyle = '#FFFFE0';*/
+        ctx.fillStyle = '#FFFFE0';
     }
     //check particle position, check mouse position,
     //move the particle, draw the particle
