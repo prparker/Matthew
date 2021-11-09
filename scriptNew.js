@@ -7,7 +7,7 @@ ctx.fillStyle  = '#FFFFE0';
 // ctx.shadowBlur = 10;
 // ctx.shadowColor = 'rgba(0,0,0,0.5)';
 
-let radius = 0.5*((canvas.width/70) * (canvas.height/70));
+let radius = Math.sqrt(canvas.width*canvas.height/(40*3.141592));
 let thresh = 1.5*radius;
 let load_radius = thresh; //Now load_radius is just threshold.
 let proportion = 1.3*radius; //100;
@@ -98,7 +98,7 @@ class Particle {
 //create particle array
 function init(time) {
     particlesArray = [];
-    let numberOfParticles = (canvas.height * canvas.width) / 5000;
+    let numberOfParticles = 150; //(canvas.height * canvas.width) / 5000;
     for (let i = 0; i < numberOfParticles; i++) {
         let size = Math.random();
         let x = (Math.random() * ((innerWidth - size * 2) - (size * 2)) + size * 2);
