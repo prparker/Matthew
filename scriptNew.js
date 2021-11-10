@@ -7,7 +7,7 @@ ctx.fillStyle  = '#FFFFE0';
 // ctx.shadowBlur = 10;
 // ctx.shadowColor = 'rgba(0,0,0,0.5)';
 
-let radius = Math.sqrt(canvas.width*canvas.height/(30*3.141592));
+let radius = Math.sqrt(canvas.width*canvas.height/(40*3.141592));
 let thresh = 1.5*radius;
 let load_radius = thresh; //Now load_radius is just threshold.
 let proportion = 1.3*radius; //100;
