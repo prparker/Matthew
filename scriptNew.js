@@ -147,45 +147,45 @@ function connect(){
             for (let b = a; b < affectedParticles.length; b++) {
                 let particle_distance = Math.hypot((affectedParticles[a].x - affectedParticles[b].x), (affectedParticles[a].y - affectedParticles[b].y));
                 if (affectedLengths[a] < radius) {
-					if (affectedLengths[b] < radius) {
-						opacityValue = 1 - (particle_distance/proportion);
-						ctx.strokeStyle='rgba(255,255,224,' + opacityValue + ')';
-						ctx.lineWidth = 1;
-						ctx.beginPath();
-						ctx.moveTo(affectedParticles[a].x, affectedParticles[a].y);
-						ctx.lineTo(affectedParticles[b].x, affectedParticles[b].y);
-						ctx.stroke();
-					}
-                    else if (affectedLengths[b] < thresh){
-						opacityValue = ((thresh-affectedLengths[b])/(thresh-radius))*(1 - (particle_distance/proportion));
-						ctx.strokeStyle='rgba(255,255,224,' + opacityValue + ')';
-						ctx.lineWidth = 1;
-						ctx.beginPath();
-						ctx.moveTo(affectedParticles[a].x, affectedParticles[a].y);
-						ctx.lineTo(affectedParticles[b].x, affectedParticles[b].y);
-						ctx.stroke();
-					}
+			if (affectedLengths[b] < radius) {
+				opacityValue = 1 - (particle_distance/proportion);
+				ctx.strokeStyle='rgba(255,255,224,' + opacityValue + ')';
+				ctx.lineWidth = 1;
+				ctx.beginPath();
+				ctx.moveTo(affectedParticles[a].x, affectedParticles[a].y);
+				ctx.lineTo(affectedParticles[b].x, affectedParticles[b].y);
+				ctx.stroke();
+			}
+                    	else if (affectedLengths[b] < thresh){
+				opacityValue = ((thresh-affectedLengths[b])/(thresh-radius))*(1 - (particle_distance/proportion));
+				ctx.strokeStyle='rgba(255,255,224,' + opacityValue + ')';
+				ctx.lineWidth = 1;
+				ctx.beginPath();
+				ctx.moveTo(affectedParticles[a].x, affectedParticles[a].y);
+				ctx.lineTo(affectedParticles[b].x, affectedParticles[b].y);
+				ctx.stroke();
+			}
                 }
                 else if (affectedLengths[a] < thresh) {
-					if (affectedLengths[b] < radius) {
-						opacityValue = ((thresh-affectedLengths[a])/(thresh-radius))*(1 - (particle_distance/proportion));
-						ctx.strokeStyle='rgba(255,255,224,' + opacityValue + ')';
-						ctx.lineWidth = 1;
-						ctx.beginPath();
-						ctx.moveTo(affectedParticles[a].x, affectedParticles[a].y);
-						ctx.lineTo(affectedParticles[b].x, affectedParticles[b].y);
-						ctx.stroke();
-					}
-					else {
-						let furthest = Math.max(affectedLengths[a],affectedLengths[b]);
-						opacityValue = ((thresh-furthest)/(thresh-radius))*(1 - (particle_distance/proportion));
-						ctx.strokeStyle='rgba(255,255,224,' + opacityValue + ')';
-						ctx.lineWidth = 1;
-						ctx.beginPath();
-						ctx.moveTo(affectedParticles[a].x, affectedParticles[a].y);
-						ctx.lineTo(affectedParticles[b].x, affectedParticles[b].y);
-						ctx.stroke();
-					}
+			if (affectedLengths[b] < radius) {
+				opacityValue = ((thresh-affectedLengths[a])/(thresh-radius))*(1 - (particle_distance/proportion));
+				ctx.strokeStyle='rgba(255,255,224,' + opacityValue + ')';
+				ctx.lineWidth = 1;
+				ctx.beginPath();
+				ctx.moveTo(affectedParticles[a].x, affectedParticles[a].y);
+				ctx.lineTo(affectedParticles[b].x, affectedParticles[b].y);
+				ctx.stroke();
+			}
+			else {
+				let furthest = Math.max(affectedLengths[a],affectedLengths[b]);
+				opacityValue = ((thresh-furthest)/(thresh-radius))*(1 - (particle_distance/proportion));
+				ctx.strokeStyle='rgba(255,255,224,' + opacityValue + ')';
+				ctx.lineWidth = 1;
+				ctx.beginPath();
+				ctx.moveTo(affectedParticles[a].x, affectedParticles[a].y);
+				ctx.lineTo(affectedParticles[b].x, affectedParticles[b].y);
+				ctx.stroke();
+			}
                 }
             }
         }
