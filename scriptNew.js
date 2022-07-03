@@ -20,8 +20,8 @@ class lightP {
     constructor(x, y, directionX, directionY, size, color) {
         this.x = x;
         this.y = y;
-        this.directionX = -.5 + Math.random();
-        this.directionY = -.5 + Math.random();
+        this.directionX = 0; //-.5 + Math.random();
+        this.directionY = 0; //-.5 + Math.random();
         this.size = size;
         this.color = color;
         this.density = (Math.random() * 10) + 2;
@@ -64,8 +64,8 @@ class Particle {
     constructor(x, y, directionX, directionY, size, color) {
         this.x = x;
         this.y = y;
-        this.directionX = -.5 + Math.random();
-        this.directionY = -.5 + Math.random();
+        this.directionX = 0;//-.5 + Math.random();
+        this.directionY = 0;//-.5 + Math.random();
         this.size = size;
         this.color = color;
         this.density = (Math.random() * 10) + 2;
